@@ -3,7 +3,7 @@ import { getInvoice } from '../data.js'
 
 export default function Invoice () {
   const params = useParams()
-  const invoice = getInvoice(parseInt(params.numberId, 10))
+  const invoice = getInvoice(Number(params.numberId))
   return (
     <div style={{ textAlign: 'center' }}>
       <h2>{invoice.name}</h2>

@@ -4,15 +4,18 @@ import { Routes, Route } from 'react-router-dom'
 
 // Components
 import Header from './components/header.jsx'
+import Footer from './components/footer.jsx'
 
 // Routes
 import Home from './routes/home.jsx'
-import List from './routes/list.jsx'
-import Description from './routes/description.jsx'
-import More from './routes/more.jsx'
-import Invoices from './routes/invoices.jsx'
 import Invoice from './routes/invoice.jsx'
-import NotFound from './routes/notFound.jsx'
+import Invoices from './routes/invoices.jsx'
+
+// Components
+import List from './components/list.jsx'
+import Description from './components/description.jsx'
+import More from './components/more.jsx'
+import NotFound from './components/notFound.jsx'
 
 function App () {
   return (
@@ -26,11 +29,13 @@ function App () {
             <Route path='/more' element={<More />} />
           </Route>
           <Route path='/invoices' element={<Invoices />}>
+            <Route index element={<main>Index Route</main>} />
             <Route path=':numberId' element={<Invoice />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }
