@@ -31,12 +31,10 @@ const data = [
   }
 ]
 
-// function that returns data
 export function getData () {
   return data
 }
 
-// function that returns
 export function getInvoice (number) {
   return data.find(invoice => invoice.number === number)
 }
